@@ -1,0 +1,142 @@
+
+footer form {
+  width: 38%;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  opacity: 0 !important;
+  padding: 100px 85px;
+  transform: translate(-50%, -50%) !important;
+  text-align: center;
+  transition: .3s !important;
+  z-index: 0;
+
+  &.form-active {
+    opacity: 1 !important;
+    top: 50%;
+    z-index: 100;
+  }
+
+  .form-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    &:hover .xmark{
+      background-color: #c68a43;
+    }
+    &:active .xmark{
+      background: #fff;
+    }
+    & .xmark {
+      width: 100%;
+      height: 2px;
+      background-color: #eac28f;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transition: .2s;
+      &:nth-child(1) {
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  & h4 {
+    font-size: 2.6875em;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+  }
+
+  & input {
+    position: relative;
+    padding: 15px 22px;
+    width: 100%;
+    border: 1px solid #eac28f;
+    font-size: 1em;
+    color: #dcae7f;
+    background-color: rgba(198, 138, 67, 0.05);
+    outline: none;
+    transition: .2s;
+    &:focus {
+      color: #fffbf5;
+    }
+
+    @include placeholder {
+      color: rgba(220, 174, 127, 0.6);
+    }
+  }
+
+  & .inputs {
+    @include flex(stretch, space-between);
+    margin-bottom: 50px;
+    &-left {
+      width: 48.5%;
+      & input {
+        margin-top: 20px;
+        &[type="text"] {
+          margin-top: 0;
+        }
+      }
+    }
+
+    & label {
+      position: relative;
+
+      & .input-error {
+        position: absolute;
+        display: none;
+        top: -79px;
+        left: 0;
+        background-color: #ff4343;
+        color: #fff;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        padding: 0 35px;
+        z-index: 10;
+        &:after {
+          display: block;
+          position: absolute;
+          content: "";
+          left: 20px;
+          bottom: -25px;
+          border: 12px solid transparent;
+          border-top: 13px solid #ff4343;
+        }
+      }
+    }
+  }
+}
+
+.input-message {
+  width: 48.5%;
+  align-self: flex-start;
+  & .input-error {
+    top: -63px !important;
+  }
+  & input {
+    height: 193px;
+    @include placeholder {
+      line-height: 10px;
+    }
+  }
+}
+
+//show error block
+//add this class to label
+.error {
+  & input {
+    border: 1px solid #ff0000;
+    color: #ff5a5a !important;
+  }
+  & .input-error {
+    display: block !important;
+  }
+}

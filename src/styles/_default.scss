@@ -1,0 +1,126 @@
+
+
+
+@mixin flex($align: stretch, $justify: stretch, $wrap: nowrap, $direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  flex-wrap: $wrap;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content }
+  &::-moz-placeholder          { @content } /* Firefox 19+ */
+  &:-moz-placeholder           { @content } /* Firefox 18- */
+  &:-ms-input-placeholder      { @content }
+}
+
+$cabin: 'Cabin', Arial, sans-serif;
+$circle: 'Circle', Arial, sans-serif;
+$extra-bold: 'Circle-ExtraBold', Arial;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+body {
+  font-size: 16px;
+  color: #353535;
+  font-family: 'Circle', Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+button.btn-default {
+  position: relative;
+  padding: 18px 35px;
+  color: #202020;
+  background: #fff;
+  font-weight: 700;
+  font-size: 0.8125em;
+  letter-spacing: 0.67px;
+  text-transform: uppercase;
+  box-shadow: 0 10px 43px rgba(0, 0, 0, 0.13);
+  transition: .2s;
+
+  &:hover {
+    color: #f2bf75;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+  }
+  &:active {
+    transition: 0s;
+    background-color: #f5f2f2;
+    color: #000;
+    box-shadow: inset 0 2px 3px rgba(198, 138, 67, 0.1);
+  }
+
+  &:after, &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 86%;
+    height: 4px;
+  }
+  &:after {
+    background: url('../img/btn-line.png');
+    opacity: .2;
+  }
+  &:before {
+    background-color: #f9c97b;
+  }
+}
+button.btn-default.btn-disabled {
+  opacity: .6;
+  background-color: #f5f2f2;
+  box-shadow: inset 0 2px 3px rgba(198, 138, 67, 0.1);
+
+  &:after, &:before {
+    display: none !important;
+  }
+
+  &:hover {
+    color: #202020;
+  }
+}
+
+button.btn-dark {
+  padding: 10px 66px;
+  background: transparent;
+  border: 10px solid #f9c97b;
+  border-image: url(../img/border-img.png) 12 repeat repeat;
+  -webkit-border-image: url(../img/border-img.png) 10 repeat repeat;
+  -o-border-image: url(../img/border-img.png) 10 repeat repeat;
+  -moz-border-image: url(../img/border-img.png) 10 repeat repeat;
+  color: #fecb94;
+  font-size: 1.2em;
+  font-weight: 700;
+  transition: .2s;
+
+  &:hover {
+    background-color: rgba(198, 138, 67, 0.09);
+  }
+
+  &:active {
+    background-color: rgba(198, 138, 67, 0.4);
+  }
+  &-disabled {
+    opacity: .5;
+    &:hover {
+      background: transparent;
+    }
+    &:active {
+      background: transparent;
+    }
+  }
+}

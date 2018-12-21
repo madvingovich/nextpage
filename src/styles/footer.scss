@@ -1,0 +1,133 @@
+
+.footer {
+  position: relative;
+  @include flex(center, center, nowrap, column);
+  background: url("../img/footer.png"),
+              #1b1b1b;
+  background-size: cover;
+  height: 1208px;
+  width: 100%;
+  overflow: hidden;
+  //to hide all items when form visible
+  & > * {
+    transform: translateY(0);
+    opacity: 1;
+    transition: .3s;
+  }
+
+  &-logo {
+    width: 20%;
+    height: 300px;
+    background: url("../img/logotype.png") no-repeat 50%;
+    background-size: 100%;
+    position: absolute;
+    left: 50%;
+    top: 36%;
+    //don't hide with hidden class
+    transform: translate(-50%, -50%) !important;
+    opacity: 1 !important;
+
+  }
+
+  &-content {
+    position: relative;
+    top: 35px;
+    height: 294px;
+    line-height: 80px;
+    font-weight: 700;
+    z-index: 100;
+    @include flex(center, space-between, nowrap, column);
+    & h3 {
+      max-width: 1200px;
+      color: #fff;
+      font-size: 3.6em;
+      text-align: center;
+    }
+  }
+
+  &-info {
+    @include flex(center, space-between);
+    padding: 0 140px;
+    width: 100%;
+    height: 117px;
+    position: absolute;
+    bottom: 105px;
+    border-bottom: 3px solid #282828;
+    line-height: 100px;
+    
+    & > a {
+      color: #ddb680;
+      letter-spacing: 0.55px;
+      font-size: 1.0625em;
+      text-transform: uppercase;
+      transition: .2s;
+      &:hover {
+        color: #fff;
+        & span {
+          color: #fff;
+        }
+      }
+      & span {
+        color: #646363;
+        text-transform: uppercase;
+        transition: inherit;
+      }
+    }
+  }
+
+  &-links {
+    @include flex(center, space-between);
+    position: relative;
+    width: 230px;
+    height: 117px;
+    &-item {
+      position: relative;
+      width: 30px;
+      height: 100%;
+      &:hover > .footer-link-default {
+        opacity: 0;
+      }
+      &:hover > .footer-link-hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-link {
+    position: absolute;
+    @include flex(center, center);
+    left: 0;
+    top: 0;
+    height: 100%;
+    opacity: 0;
+    transition: .2s;
+
+    &-default {
+      opacity: 1;
+    }
+  }
+}
+
+a.nextpage {
+  position: absolute;
+  display: block;
+  @include flex(flex-start, center);
+  right: 108px;
+  bottom: 60px;
+  width: 220px;
+  font-size: 0.75em;
+  color: #6f6f6f;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .2s;
+  & img {
+    position: absolute;
+    right: 0;
+    top: -5px;
+  }
+}
+
+.hidden {
+  transform: translateY(100px);
+  opacity: 0;
+}

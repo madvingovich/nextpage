@@ -1,0 +1,95 @@
+.contact {
+  position: fixed;
+  right: 69px;
+  top: 100px;
+  transform: translateX(50%);
+  height: auto;
+  width: 64px;
+  background: #fff;
+  box-shadow: 0 30px 180px rgba(0, 0, 0, 0.24);
+  transition: .2s;
+  z-index: 100;
+
+  &-arrow {
+    position: relative;
+    @include flex(center, center);
+    width: 100%;
+    height: 100%;
+
+    &-img {
+      position: absolute;
+      opacity: 0;
+      transition: .2s;
+      &-default {
+        opacity: 1;
+      }
+    }
+
+  }
+
+  &-handle {
+    position: relative;
+    @include flex(center, center, nowrap, column!important);
+    border-bottom: 2px solid transparent;
+    background: #fff;
+    &:hover .line-black {
+      left: 0 !important;
+    }
+    &:hover .contact-arrow-img-default {
+      opacity: 0;
+    }
+    &:hover .contact-arrow-img-hover {
+      opacity: 1;
+    }
+    &:active .contact-arrow-img-press {
+      transition: 0s;
+      opacity: 1;
+    }
+  }
+}
+
+.contact-item {
+  height: 64px;
+  width: 64px;
+  &:hover .contact-link-default {
+    opacity: 0;
+  }
+  &:hover .contact-link-hover {
+    opacity: 1;
+  }
+  &:active .contact-link-press {
+    transition: 0s;
+    opacity: 1;
+  }
+  &:active .contact-link-hover {
+    opacity: 0;
+  }
+  &:nth-child(2) {
+    position: relative;
+    border-top: 2px solid #f0f0f0;
+    &:after {
+      position: absolute;
+      display: block;
+      content: "";
+      left: calc(100% - 14px);
+      //left: -100px;
+      width: 100px;
+      height: 1px;
+      top: 50%;
+      background: linear-gradient(to right, #010101 14%, rgba(1, 1, 1, 0.25) 15%);;
+    }
+  }
+}
+
+.contact-link {
+  position: absolute;
+  @include flex(center, center);
+  opacity: 0;
+  transition: .2s;
+  width: inherit;
+  height: inherit;
+
+  &-default {
+    opacity: 1;
+  }
+}

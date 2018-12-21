@@ -1,0 +1,34 @@
+
+@font-face {
+  font-family: 'Circle';
+  src: url('../fonts/CircleRegular/Circe-Regular.eot');
+  src: local('./fonts/CircleRegular'), local('CircleRegular'),
+  url('../fonts/CircleRegular/Circe-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/CircleRegular/Circe-Regular.woff') format('woff'),
+  url('../fonts/CircleRegular/Circe-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Circle-ExtraBold';
+  src: url('../fonts/CircleExtraBold/Circe-ExtraBold.eot');
+  src: local('./fonts/CircleExtraBold'), local('CircleExtraBold'),
+  url('../fonts/CircleExtraBold/Circe-ExtraBold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/CircleExtraBold/Circe-ExtraBold.woff') format('woff'),
+  url('../fonts/CircleExtraBold/Circe-ExtraBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Cabin';
+  src: url('../fonts/CabinRegular/Cabin-Regular.eot');
+  src: local('./fonts/CabinRegular'), local('CabinRegular'),
+  url('../fonts/CabinRegular/Cabin-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/CabinRegular/Cabin-Regular.woff') format('woff'),
+  url('../fonts/CabinRegular/Cabin-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
