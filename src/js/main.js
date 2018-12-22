@@ -23,7 +23,7 @@ $(document).ready(function() {
 
     validateInput('footer input[type=email]', /\w+@\w+\.\w+/gi);
 
-    validateInput('footer .input-name', /^[A-Za-z]+$/gi);
+    validateInput('footer .input-name', /^[A-Za-z ?]+$/gi);
 
     validateInput('footer input[type=tel]', /^\+?\d+$/gi);
 
