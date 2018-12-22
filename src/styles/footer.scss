@@ -1,7 +1,7 @@
 
 .footer {
   position: relative;
-  @include flex(center, center, nowrap, column);
+  @include flex(stretch, center, nowrap, column);
   background: url("../img/footer.png"),
               #1b1b1b;
   background-size: cover;

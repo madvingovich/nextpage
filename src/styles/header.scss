@@ -27,6 +27,7 @@ h1 {
 
 .header-content {
   @include flex(flex-end);
+  position: relative;
   min-height: 1044px;
 
   & .next, .prev {
@@ -71,7 +72,7 @@ h1 {
 .navigation {
   @include flex(flex-start, center, nowrap, column);
   width: 28.44%;
-  position: relative;
+  position: absolute;
   bottom: 112px;
   z-index: 120;
 
