@@ -9,6 +9,8 @@ const
     bs = require('browser-sync'),
     autoprefixer = require('gulp-autoprefixer');
 
+const production = process.env.NODE_ENV === 'production';
+
 const jsFiles = [
     'src/js/jquery-3.3.1.min.js',
     'src/js/main.js',
@@ -22,12 +24,12 @@ gulp.task('html', () => {
 
 gulp.task('styles', () => {
     return gulp.src('src/styles/main.scss')
-        .pipe(sourcemaps.init())
+        .pipe(gulpIf(!production, sourcemaps.init()))
         .pipe(scss())
         .pipe(autoprefixer({
             browsers: ['last 5 versions']
         }))
-        .pipe(sourcemaps.write())
+        .pipe(gulpIf(!production, sourcemaps.write()))
         .pipe(gulp.dest('dist/css'));
 });
 
@@ -38,9 +40,9 @@ gulp.task('fonts', () => {
 
 gulp.task('js', () => {
     return gulp.src(jsFiles)
-        .pipe(sourcemaps.init())
+        .pipe(gulpIf(!production, sourcemaps.init()))
         .pipe(concat('main.js'))
-        .pipe(sourcemaps.write())
+        .pipe(gulpIf(!production, sourcemaps.write()))
         .pipe(gulp.dest('dist/js'))
 });
 
